@@ -33,7 +33,7 @@ const key = process.env.CORTEX_API_KEY;
 
 // Read the piped input
 let inputString = '';
-if (!argv.input) {
+if (!argv.input && !process.stdin.isTTY) {
   process.stdin.setEncoding('utf8');
   process.stdin.on('readable', () => {
     let chunk;
