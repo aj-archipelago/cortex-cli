@@ -1,0 +1,20 @@
+{
+  "name": "gdreview",
+  "version": "1.0.1",
+  "description": "",
+  "main": "gdreview.js",
+  "bin": {
+    "gdreview": "gdreview.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "minimist": "^1.2.8",
+    "node-fetch": "^2.7.0",
+    "util": "^0.12.5"
+  }
+}
