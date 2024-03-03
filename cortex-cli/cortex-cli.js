@@ -5,7 +5,6 @@ const yargs = require("yargs/yargs");
 const { hideBin } = require("yargs/helpers");
 const fs = require("fs");
 const Papa = require("papaparse");
-const _ = require("lodash");
 
 const argv = yargs(hideBin(process.argv))
   .command("$0 [command]", "Cortex CLI", (yargs) => {
@@ -65,7 +64,6 @@ if (!argv.input && !process.stdin.isTTY) {
       inputString += chunk;
     }
   });
-
   process.stdin.on("end", () => {
     handleInput(inputString, argv.prompt, variables, argv.mergecsv).catch(
       (error) => {
@@ -83,8 +81,7 @@ if (!argv.input && !process.stdin.isTTY) {
 
 function cleanData(data) {
   const lines = data.split(/\r?\n|\r/); // Split by any EOL characters
-  const firstLines = lines.slice(0, 100); // Get the first 100 lines
-  const cleanedLines = firstLines.map((line) => {
+  const cleanedLines = lines.map((line) => {
     return line.replace(/,+$/, ""); // Remove trailing commas from each line
   });
   return cleanedLines.join("\n");
