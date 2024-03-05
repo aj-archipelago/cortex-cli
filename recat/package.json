@@ -1,0 +1,13 @@
+{
+    "name": "recat",
+    "version": "1.0.0",
+    "description": "Your package description",
+    "bin":{ "recat": "recat.js"},
+    "main": "recat.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Jason McCartney",
+    "license": "MIT",
+    "dependencies": {}
+}
